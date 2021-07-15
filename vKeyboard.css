@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 5px;
+}
+.title span {
+  color: rgb(0, 89, 255);
+}
+
+.textContainer {
+  margin-top: 100px;
+}
+
+.textContainer textarea {
+  width: 50%;
+  height: 50px;
+  outline: none;
+  padding: 10px;
+  font-size: 2em;
+  border-radius: 10px;
+}
+
+.textContainer textarea:focus {
+  border: 2px solid rgb(0, 89, 255);
+}
+
+.keyboardContainer.hidden {
+  transform: translate(-50%, 200%);
+}
+
+.keyboardContainer {
+  position: fixed;
+  padding: 20px 0;
+  width: 95%;
+  bottom: 10px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgb(0, 89, 255);
+
+  text-align: center;
+  box-sizing: border-box;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 37px 0px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 0px 0px 37px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 0px 0px 37px 0px rgba(0, 0, 0, 0.49);
+}
+
+.keys {
+  height: 45px;
+  max-width: 90px;
+  width: 7%;
+  font-size: 1em;
+  margin: 2px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: #ffff;
+  overflow: hidden;
+  vertical-align: top;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wide {
+  width: 14%;
+  max-width: 180px;
+}
+
+.ultraWide {
+  width: 40%;
+  max-width: 540px;
+}
+
+@media screen and (max-width: 768px) {
+  .keyboardContainer {
+    width: 100%;
+    border-radius: 0px;
+    bottom: 0px;
+  }
+  .keys {
+    width: 6%;
+    text-align: center;
+  }
+  .wide {
+    width: 14%;
+  }
+  .ultraWide {
+    width: 40%;
+  }
+}
