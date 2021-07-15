@@ -48,19 +48,17 @@ const keyboardContainer = document.querySelector(".keyboardContainer");
 const input = document.querySelector(".enterText");
 let ifCaps = false;
 
-input.addEventListener("click", keyboard);
-
-function keyboard() {
-  input.removeEventListener("click", keyboard);
+input.addEventListener("click", () => {
   keyboardContainer.classList.remove("hidden");
-  keyLayout.forEach((element) => {
-    let key = document.createElement("BUTTON");
-    key.classList.add("keys");
-    addIconsAndSpaces(key, element, true);
-    keyboardContainer.appendChild(key);
-  });
-  fillLowerKeys();
-}
+});
+
+keyLayout.forEach((element) => {
+  let key = document.createElement("BUTTON");
+  key.classList.add("keys");
+  addIconsAndSpaces(key, element, true);
+  keyboardContainer.appendChild(key);
+});
+fillLowerKeys();
 
 function createIconHTML(icon_name) {
   return `<i class="material-icons">${icon_name}</i>`;
@@ -140,3 +138,7 @@ function addIconsAndSpaces(key, element, bool) {
       key.addEventListener("click", enterText);
   }
 }
+
+document.querySelector(".close").addEventListener("click", () => {
+  keyboardContainer.classList.add("hidden");
+});
